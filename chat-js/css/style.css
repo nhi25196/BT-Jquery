@@ -1,0 +1,5 @@
+#content{width:420px;height:500px;background-color:yellow;margin-bottom:5px;overflow:auto}
+.right{float:left;}
+.left{float:left;width:100px;margin-right:10px;}
+#my_form{margin:5px;padding:3px;}
+#name{width:100px}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>enter-click input</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <input id="input-content" name="">
+    <button id="my-button">Thêm</button>
+    <ol id="list">
+
+    </ol>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // $('#my-button').click( function(){
+            // 	alert('submit thành công')
+            // });
+
+            function clickBtn() {
+                var a = $('#input-content').val();
+                $('#list').append("<li>" + a + "<button class='btnD'>   X</button></li>");
+                $('.btnD').last().click(function() {
+                    $(this).parent().remove();
+                });
+                $('#input-content').val('');
+            }
+
+
+            function enterKey() {
+                if (event.keyCode == 13) {
+                    if ($('#input-content').val() != '') {
+                        $('#list').append("<li>" + $('#input-content').val() + "<button class='btnD'>X</button></li>");
+                        $('.btnD').last().click(function() {
+                            $(this).parent().remove();
+                        });
+                        $('#input-content').val('');
+
+                    }
+                }
+            }
+
+            $('#my-button').click(clickBtn);
+            $('#input-content').keyup(enterKey)
+
+
+        });
+    </script>
+</body>
+
+</html>

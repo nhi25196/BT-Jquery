@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+
+
+
+
+    <title>Text</title>
+
+
+	<link href="css\style.css" rel="stylesheet">
+	
+
+  </head>
+  <body>
+  
+	<div class="abc">
+		<div id="content">
+		</div>
+		
+		<form method="post" id="my_form">
+		
+				<div class="left">
+				<input type="text" placeholder="Nhập họ và tên" id="name">
+				</div>
+				<div class="right">
+				<input  placeholder="text" id="tinnhan">
+				</div>
+				<button type="submit" name="ok">Send</button>
+		
+		
+		</form>
+	
+	</div>
+  
+    
+    <script src="lib/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+	
+		$('#my_form').submit(function(){
+		var name = $('#name').val();
+		var tinnhan = $('#tinnhan').val();
+		$('#content').append(name +':'+ tinnhan +'<br>');
+		$('#name').prop('disabled',true);
+		$('#tinnhan').val('');
+		$('#tinnhan').focus('');
+		
+		return false;
+		
+			
+		});
+			
+			
+             
+	</script>
+
+	
+  </body>
+</html>
